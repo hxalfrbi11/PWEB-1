@@ -1,0 +1,13 @@
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid black;
+    margin: 2px;
+}
+.kotak:first-of-type{
+    padding: 20px;
+}
+.kotak:last-of-type{
+    margin:20px;
+}
