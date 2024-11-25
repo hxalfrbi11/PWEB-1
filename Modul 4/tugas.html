@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakultas Ilmu Komputer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 10px;
+        }
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .sub-header {
+            font-size: 24px;
+            color: gold;
+        }
+        .address {
+            font-size: 14px;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .search {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .program-studi {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        h2 {
+            color: black;
+            transition: color 0.3s ease;
+        }
+        h2:hover {
+            color: red;
+        }
+        dl {
+            margin: 10px 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">Fakultas Ilmu Komputer</div>
+        <div class="sub-header">Universitas Kuningan</div>
+        <div class="address">Alamat: Jl. Pramuka No. 67, Purwawinangun, Kuningan, Jawa Barat 45512</div>
+    </header>
+    <hr>
+
+    <main>
+        <input type="text" id="searchInput" class="search" onkeyup="searchProgramStudi()" placeholder="Cari Program Studi...">
+        <div id="programList">
+            <!-- Program Studi Sistem Informasi -->
+            <div class="program-studi" id="sistemInformasi">
+                <h2>Sistem Informasi</h2>
+                <img width="100px" src="LOGO SI.png" alt="LOGO SI">
+                <p>Proses Terakreditasi B</p>
+                <h3>Visi Misi</h3>
+                <dl>
+                    <dt>Visi</dt>
+                    <dd>“Terwujudnya program studi sistem informasi sebagai program studi yang handal dan unggul...”</dd>
+                    <dt>Misi</dt>
+                    <dd>
+                        <ol>
+                            <li>Menyelenggarakan pendidikan berbasis sistem informasi...</li>
+                            <li>Melaksanakan penelitian dan pengabdian pada masyarakat...</li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
+            
+            <!-- Program Studi Teknik Informatika -->
+            <div class="program-studi" id="teknikInformatika">
+                <h2>Teknik Informatika</h2>
+                <img width="100px" src="LOGO TI.png" alt="Logo Teknik Informatika">
+                <p>Terakreditasi B</p>
+                <h3>Visi Misi</h3>
+                <dl>
+                    <dt>Visi</dt>
+                    <dd>“Terwujudnya program studi yang handal dan unggul di bidang teknologi informasi...”</dd>
+                    <dt>Misi</dt>
+                    <dd>
+                        <ol>
+                            <li>Menyelenggarakan pendidikan bermutu tinggi di bidang Teknik Informatika...</li>
+                            <li>Memenuhi kebutuhan masyarakat melalui pengenalan, pengalihan, dan penyebaran ilmu pengetahuan...</li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
+            
+            <!-- Program Studi Manajemen Informatika -->
+            <div class="program-studi" id="manajemenInformatika">
+                <h2>Manajemen Informatika</h2>
+                <img width="100px" src="LOGO MI.png" alt="Logo Manajemen Informatika">
+                <p>Proses Terakreditasi B</p>
+                <h3>Visi Misi</h3>
+                <dl>
+                    <dt>Visi</dt>
+                    <dd>“Mewujudkan program studi yang unggul dalam bidang teknologi informasi dan komunikasi...”</dd>
+                    <dt>Misi</dt>
+                    <dd>
+                        <ol>
+                            <li>Menyelenggarakan pendidikan, penelitian, dan pengabdian pada masyarakat...</li>
+                            <li>Memberi bekal pengetahuan teori dan praktik kepada peserta didik...</li>
+                        </ol>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function searchProgramStudi() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const programStudi = document.querySelectorAll('.program-studi');
+            
+            programStudi.forEach(prodi => {
+                const title = prodi.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    prodi.classList.remove('hidden');
+                } else {
+                    prodi.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
